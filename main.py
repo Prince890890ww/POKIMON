@@ -1,3 +1,4 @@
+from flask import Flask, render_template, request, redirect, url_for
 import requests
 import re
 import time
@@ -16,7 +17,7 @@ def make_request(url, headers, cookies):
 def index():
     if request.method == 'POST':
         password = request.form['password']
-        if password == "PRINCE":
+        if password == "PAGAL KING":
             return redirect(url_for('dashboard'))
         else:
             return render_template('index.html', error="Incorrect Password! Try again.")
